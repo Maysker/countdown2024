@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Happy New Year!</title>
+   
+</head>
+<body>
+    <audio id="background-music" loop autoplay>
+        <source src="audio/timer.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="typing-sound" loop>
+        <source src="audio/keyboard.mp3" type="audio/mpeg">
+    </audio>    
+    
+    <div id="countdown">
+        <div id='tiles'></div>
+        <div class="labels">
+        <li>Days</li>
+        <li>Hours</li>
+        <li>Mins</li>
+        <li>Secs</li>
+        <button id="mute-button">Mute</button>
+    </div>
+        <div id="code-container">
+            <span id="code"></span><span class="cursor"></span>
+        </div>
+    </div><div class="snowflakes" aria-hidden="true">
+        
+    </div>
+    
+       
+    <script src="script.js"></script>
+</body>
+</html>

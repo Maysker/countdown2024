@@ -1,0 +1,261 @@
+/* Prevent horizontal scrolling */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Hide audio element */
+#audio {
+  display: none;
+}
+
+/* Hide typing sound element */
+#typing-sound {
+  display: none;
+}
+
+/* Mute button styles */
+#mute-button {
+  padding: 3px 25px;
+  font-size: 039;
+  cursor: pointer;
+  background-color: #f47321;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  top: -160px; /* Adjust to position the button within the timer */
+  right: 5px; /* Position the button in the upper right corner of the timer */
+  z-index: 10; /* Ensure the button is visible above timer elements */
+}
+
+/* Body styles */
+body {
+  font: normal 13px/20px Arial, Helvetica, sans-serif;
+  word-wrap: break-word;
+  color: #eee;
+  background: #353535;
+}
+
+/* Countdown timer styles */
+#countdown {
+  width: 465px;
+  height: 112px;
+  text-align: center;
+  background: #222;
+  background-image: -webkit-linear-gradient(top, #222, #333, #333, #222); 
+  background-image: -moz-linear-gradient(top, #222, #333, #333, #222);
+  background-image: -ms-linear-gradient(top, #222, #333, #333, #222);
+  background-image: -o-linear-gradient(top, #222, #333, #333, #222);
+  border: 1px solid #111;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+  margin: auto;
+  padding: 24px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Countdown timer pseudo-elements */
+#countdown:before,
+#countdown:after {
+  content: "";
+  width: 8px;
+  height: 65px;
+  background: #444;
+  background-image: -webkit-linear-gradient(top, #555, #444, #444, #555); 
+  background-image: -moz-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -ms-linear-gradient(top, #555, #444, #444, #555);
+  background-image: -o-linear-gradient(top, #555, #444, #444, #555);
+  border: 1px solid #111;
+  display: block;
+  position: absolute;
+  top: 48px;
+}
+
+/* Countdown timer pseudo-elements positioning */
+#countdown:before {
+  left: -10px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#countdown:after {
+  right: -10px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Countdown timer tiles container */
+#countdown #tiles {
+  position: relative;
+  z-index: 1;
+}
+
+/* Countdown timer tile styles */
+#countdown #tiles > span {
+  width: 92px;
+  max-width: 92px;
+  font: bold 48px 'Droid Sans', Arial, sans-serif;
+  text-align: center;
+  color: #111;
+  background-color: #ddd;
+  background-image: -webkit-linear-gradient(top, #bbb, #eee); 
+  background-image: -moz-linear-gradient(top, #bbb, #eee);
+  background-image: -ms-linear-gradient(top, #bbb, #eee);
+  background-image: -o-linear-gradient(top, #bbb, #eee);
+  border-top: 1px solid #fff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+  margin: 0 7px;
+  padding: 18px 0;
+  display: inline-block;
+  position: relative;
+}
+
+/* Countdown timer tile pseudo-elements */
+#countdown #tiles > span:before {
+  content: "";
+  width: 100%;
+  height: 13px;
+  background: #111;
+  display: block;
+  padding: 0 3px;
+  position: absolute;
+  top: 41%;
+  left: -3px;
+  z-index: -1;
+}
+
+#countdown #tiles > span:after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #eee;
+  border-top: 1px solid #333;
+  display: block;
+  position: absolute;
+  top: 48%;
+  left: 0;
+}
+
+/* Countdown timer labels */
+#countdown .labels {
+  width: 100%;
+  height: 25px;
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+}
+
+/* Countdown timer label styles */
+#countdown .labels li {
+  width: 102px;
+  font: bold 15px 'Droid Sans', Arial, sans-serif;
+  color: #f47321;
+  text-shadow: 1px 1px 0px #000;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+/* Snowflakes styles */
+.snowflakes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Snowflake styles */
+.snowflake {
+  position: absolute;
+  top: -2em;
+  color: #fff;
+  font-size: 1em;
+  pointer-events: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Keyframes for snowflake animation */
+@keyframes fall {
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(10px); }
+}
+
+/* Code container styles */
+#code-container {
+  font-family: 'Courier New', monospace;
+  color: #33ff33;
+  background: #222;
+  background-image: linear-gradient(top, #222, #333, #333, #222); 
+  border: 1px solid #111;
+  border-radius: 5px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  padding: 10px;
+  margin: 20px auto;
+  display: inline-block;
+  width: 95%;
+  max-width: 600px;
+  font-size: 1.2em;
+  line-height: 1.5;
+  min-height: 4em;
+  margin-top: 80px;
+  position: relative;
+}
+
+/* Pseudo-elements for code container */
+#code-container:before,
+#code-container:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 8px;
+  height: 65px;
+  background: #444;
+  background-image: linear-gradient(to bottom, #555, #444, #444, #555); 
+  border: 1px solid #111;
+  transform: translateY(-50%);
+}
+
+/* Pseudo-elements positioning for code container */
+#code-container:before {
+  left: -10px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+#code-container:after {
+  right: -10px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Cursor blink animation */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background-color: #33ff33;
+  animation: blink 1s infinite step-start;
+}
+
+@keyframes blink {
+  50% { background-color: transparent; }
+}
