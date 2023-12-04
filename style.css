@@ -53,7 +53,7 @@ body {
   margin: auto;
   padding: 24px 0;
   position: absolute;
-  top: 0;
+  top: -200px;
   bottom: 0;
   left: 0;
   right: 0;
