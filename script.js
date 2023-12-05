@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => typePhrases(codePhrases));
 
 // Get audio elements and the mute button
 var backgroundMusic = document.getElementById('background-music');
-var typingSound = document.getElementById('typing-sound');
 var muteButton = document.getElementById('mute-button');
 
 // Flag to track the sound state
@@ -131,7 +130,6 @@ var isMuted = false;
 function toggleMute() {
   isMuted = !isMuted; // Toggle the flag
   backgroundMusic.muted = isMuted; // Enable or disable background music
-  typingSound.muted = isMuted; // Enable or disable typing sound
   muteButton.textContent = isMuted ? "Unmute" : "Mute"; // Update the button text
 }
 
